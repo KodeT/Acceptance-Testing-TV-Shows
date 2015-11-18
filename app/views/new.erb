@@ -1,6 +1,8 @@
 <h1>Add Show Details</h1>
 
-<% if @status %>
+<% if @valid_input == true && @duplicate == true%>
+  <h2>That show has already been added</h2>
+<% elsif @valid_input == false %>
   <h2>Please fill in all required fields</h2>
 <% end %>
 
