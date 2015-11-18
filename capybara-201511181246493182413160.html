@@ -1,0 +1,26 @@
+<h1>Add Show Details</h1>
+
+<form action="/television_shows/new" method="post">
+  <label for="Title">Title</label>
+  <input type="text" name="title" id="Title">
+
+  <label for="Network">Network</label>
+  <input type="text" name="network" id="Network">
+
+  <label for="Starting Year">Starting Year</label>
+  <input type="text" name="starting_year" id="Starting Year">
+
+  <label for="synopsis">Synopsis</label>
+  <input type="text" name="synopsis" id="synopsis">
+
+  <label for="Genre">Genre</label>
+  <select name="Genre">
+    <option value="action">Action</option>
+    <option value="mystery">Mystery</option>
+    <option value="drama">Drama</option>
+    <option value="comedy">Comedy</option>
+    <option value="fantasy">Fantasy</option>
+  </select>
+
+  <button type="button">Add TV Show!</button>
+</form>

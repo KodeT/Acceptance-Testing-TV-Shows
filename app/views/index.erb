@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tali and Joe's Page!!</title>
+  </head>
+
+  <body>
+    <h1>List of Shows</h1>
+    <ul>
+      <% @tv_array.each do |tv_row| %>
+        <%= tv_row[:title] %> (<%= tv_row[:network] %>)
+      <% end %>
+    </ul>
+  </body>
+</html>
