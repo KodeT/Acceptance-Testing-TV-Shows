@@ -1,5 +1,5 @@
 require "spec_helper"
-
+require "launchy"
 # As a TV fanatic
 # I want to add one of my favorite shows
 # So that I can encourage others to binge watch it
@@ -13,21 +13,21 @@ require "spec_helper"
 
 feature "user adds a new TV show" do
 
-  scenario "successfully add a new show" do
+  scenario "#the user successfully add a new show" do
     visit "/television_shows/new"
 
     fill_in "Title", with: "Friends"
     fill_in "Network", with: "NBC"
     fill_in "Starting Year", with: "1994"
     fill_in "Synopsis", with: "Six friends living in New York city."
-    select "Comedy", from: "Genre"
+    select "Comedy", from: "genre"
     click_button "Add TV Show"
     expect(page).to have_content "List of Shows"
 
     expect(page).to have_content "Friends (NBC)"
   end
 
-  scenario "fails to add a show with valid information and stays on the same page" do
+  scenario "#the user fails to add a show with valid information and stays on the same page" do
     visit "/television_shows/new"
 
     click_button "Add TV Show"

@@ -8,7 +8,7 @@
     <h1>List of Shows</h1>
     <ul>
       <% @tv_array.each do |tv_row| %>
-        <%= tv_row[:title] %> (<%= tv_row[:network] %>)
+          <li><%= tv_row[:title] %> (<%= tv_row[:network] %>)</li>
       <% end %>
     </ul>
   </body>

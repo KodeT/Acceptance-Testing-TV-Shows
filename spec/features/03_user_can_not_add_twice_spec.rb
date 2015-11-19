@@ -10,14 +10,14 @@ require 'spec_helper'
 # [] If the details of the show are not saved, I will remain on the new form page
 feature "does not save duplicates" do
 
-  scenario "users does not put in a duplicate" do
+  scenario "#users does not put in a duplicate" do
     visit "/television_shows/new"
 
     fill_in "Title", with: "Friends"
     fill_in "Network", with: "NBC"
     fill_in "Starting Year", with: "1994"
     fill_in "Synopsis", with: "Six friends living in New York city."
-    select "Comedy", from: "Genre"
+    select "Comedy", from: "genre"
     click_button "Add TV Show"
     expect(page).to have_content "List of Shows"
 
@@ -29,21 +29,21 @@ feature "does not save duplicates" do
     fill_in "Network", with: "Netflix"
     fill_in "Starting Year", with: "2013"
     fill_in "Synopsis", with: "Man is a jerk"
-    select "Drama", from: "Genre"
+    select "Drama", from: "genre"
     click_button "Add TV Show"
     expect(page).to have_content "List of Shows"
 
     expect(page).to have_content "House of Cards (Netflix)"
   end
 
-  scenario "user puts in a duplicate" do
+  scenario "#user puts in a duplicate" do
     visit "/television_shows/new"
 
     fill_in "Title", with: "Friends"
     fill_in "Network", with: "NBC"
     fill_in "Starting Year", with: "1994"
     fill_in "Synopsis", with: "Six friends living in New York city."
-    select "Comedy", from: "Genre"
+    select "Comedy", from: "genre"
     click_button "Add TV Show"
 
     visit "/television_shows/new"
@@ -52,7 +52,7 @@ feature "does not save duplicates" do
     fill_in "Network", with: "NBC"
     fill_in "Starting Year", with: "1994"
     fill_in "Synopsis", with: "Six friends living in New York city."
-    select "Comedy", from: "Genre"
+    select "Comedy", from: "genre"
     click_button "Add TV Show"
     expect(page).to have_content "That show has already been added"
 
